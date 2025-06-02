@@ -1,7 +1,7 @@
 function verificarSenha() {
     const senha = document.getElementById('senha').value;
 
-    fetch('/validar_senha', {
+    fetch('https://connecta-back.onrender.com/validar_senha', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ senha })
@@ -20,7 +20,7 @@ function verificarSenha() {
 }
 
 function exportar() {
-    fetch('/exportar')
+    fetch('https://connecta-back.onrender.com/exportar')
         .then(res => res.json())
         .then(data => {
             document.getElementById('status').textContent = data.message;
@@ -56,7 +56,7 @@ function exportar() {
 }
 
 function converter() {
-    fetch('/converter', { method: 'POST' })
+    fetch('https://connecta-back.onrender.com/converter', { method: 'POST' })
         .then(res => res.json())
         .then(data => {
             document.getElementById('status').textContent = data.message;

@@ -46,7 +46,7 @@ function sendWhatsApp(event) {
 
     // Salva no backend
     const data = { nome, telefone, endereco, numero, cidade, problema };
-    fetch('/submit', {
+    fetch('https://connecta-back.onrender.com/submit', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ function sendWhatsApp(event) {
 }
 
 function exportarCSV() {
-    fetch('/exportar')
+    fetch('https://connecta-back.onrender.com/exportar')
         .then(res => res.json())
         .then(data => {
             alert(data.message); // Exibe a mensagem de sucesso
