@@ -6,17 +6,18 @@ function verificarSenha() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ senha })
     })
-    .then(res => res.json())
-    .then(data => {
-        if (data.acesso) {
-            document.getElementById('painel').style.display = 'block';
-        } else {
-            alert('Senha incorreta');
-        }
-    })
-    .catch(() => {
-        alert('Erro ao validar senha');
-    });
+
+        .then(res => res.json())
+        .then(data => {
+            if (data.acesso) {
+                document.getElementById('painel').style.display = 'block';
+            } else {
+                alert('Senha incorreta');
+            }
+        })
+        .catch(() => {
+            alert('Erro ao validar senha');
+        });
 }
 
 function exportar() {
