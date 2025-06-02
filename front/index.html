@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+
+    <title>Connecta</title>
+</head>
+
+
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="img/logo/Logo Padrão/logo padrao sem icone.png" alt="logo-icone-connecta" class="logo" />
+
+            <nav class="desktop-menu">
+                <a href="#">Sobre nós</a>
+                <a href="#">Como funciona</a>
+                <a href="#">WhatsApp</a>
+            </nav>
+
+            <div class="menu-btn" id="menu-btn">&#9776;</div>
+        </div>
+    </header>
+    </header>
+
+    <div class="dropdown-menu" id="dropdown-menu">
+        <nav>
+            <a href="#">Sobre nós</a>
+            <a href="#">Como funciona</a>
+            <a href="#">WhatsApp</a>
+        </nav>
+    </div>
+
+    <main>
+        <section>
+            <h1>Conectamos <span>você</span> a oportunidades reais!</h1>
+            <p>aqui encontramos a <span><strong>melhor</strong></span> solução para seu problema</p>
+        </section>
+        <section>
+            <div class="form-wrapper">
+                <h2>Digite seu problema que iremos<br><span>encontrar a <span class="highlight">melhor solução</span>
+                        para ele</span></h2>
+
+                <form id="contactForm" onsubmit="return sendWhatsApp(event)">
+                    <p id="form-status" style="margin-top: 20px; font-weight: bold;"></p>
+                    <div class="form-grid">
+                        <div class="form-item nome">
+                            <label for="nome">Nome Completo:</label>
+                            <input type="text" id="nome" name="nome" required />
+                        </div>
+
+                        <div class="form-item telefone">
+                            <label for="telefone">Número de Telefone:</label>
+                            <input type="tel" id="telefone" name="telefone" required oninput="maskTelefone(this)" />
+                        </div>
+
+                        <div class="form-item endereco">
+                            <label for="endereco">Endereço:</label>
+                            <input type="text" id="endereco" name="endereco" required />
+                        </div>
+
+                        <div class="form-item numero">
+                            <label for="numero">Número:</label>
+                            <input type="number" id="numero" name="numero" required />
+                        </div>
+
+                        <div class="form-item cidade">
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="cidade" name="cidade" required />
+                        </div>
+
+                        <div class="form-item problema">
+                            <label for="problema">Informe seu problema:</label>
+                            <textarea id="problema" name="problema" required rows="5"></textarea>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="form-button">Resolver agora!</button>
+                </form>
+            </div>
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-branding">
+                <img src="img/logo/Logo Padrão/Logo Padrão_1.png" alt="Logo Connecta" class="footer-logo">
+                <p class="footer-description">Conectando você a oportunidades reais. Transforme seu problema em solução
+                    com a Connecta.</p>
+            </div>
+
+            <div class="footer-sections">
+                <div class="footer-links">
+                    <h4>Links rápidos</h4>
+                    <a href="#">Sobre nós</a>
+                    <a href="#">Como funciona</a>
+                    <a href="https://wa.me/seunumerodowhatsapp" target="_blank" rel="noopener">WhatsApp</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>Email: suporte@connecta.com</p>
+                    <p>Telefone: (11) 99999-9999</p>
+                    <p>Atendimento: Seg a Sex, 9h às 18h</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Connecta. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="javascript/menu.js"></script>
+    <script src="javascript/form.js"></script>
+</body>
+
+</html>

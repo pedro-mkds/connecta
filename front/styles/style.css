@@ -1,0 +1,397 @@
+@charset "UTF-8";
+
+@import url("base.css");
+
+/* ========================= HEADER ========================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1202;
+    background-color: white;
+    min-height: 70px;
+    overflow: visible;
+}
+
+.logo {
+    width: 250px;
+    height: 40px;
+    z-index: auto;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+/* ========================= MENU SANDUÍCHE ========================= */
+body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+.menu-btn {
+    font-size: 35px;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1201;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: var(--azul-petroleo);
+}
+
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - 70px);
+    padding: 30px;
+    background-color: var(--branco-esverdeado);
+    backdrop-filter: blur(5px);
+    z-index: 1100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.dropdown-menu nav {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.dropdown-menu nav a {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: var(--azul-petroleo);
+    text-shadow: 3px 5px 10px #00000013;
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: none;
+    animation-fill-mode: forwards;
+}
+
+.dropdown-menu.show nav a:nth-child(1) { animation: drop 0.4s ease-out 0.2s forwards; }
+.dropdown-menu.show nav a:nth-child(2) { animation: drop 0.4s ease-out 0.3s forwards; }
+.dropdown-menu.show nav a:nth-child(3) { animation: drop 0.4s ease-out 0.4s forwards; }
+.dropdown-menu.show nav a:nth-child(4) { animation: drop 0.4s ease-out 0.5s forwards; }
+.dropdown-menu.show nav a:nth-child(5) { animation: drop 0.4s ease-out 0.6s forwards; }
+
+@keyframes drop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= MAIN ========================= */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main h1 { font-family: 'Balto'; }
+main span { color: var(--verde-turquesa); }
+main p { font-size: 0.8em; margin-bottom: -30px; }
+
+/* ========================= FORMULÁRIO ========================= */
+.form-wrapper {
+    background-color: var(--azul-petroleo);
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: left;
+}
+
+.form-wrapper label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-wrapper input,
+.form-wrapper textarea {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    resize: none;
+}
+
+.form-wrapper h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.form-wrapper .highlight {
+    color: var(--verde-turquesa);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-item { display: flex; flex-direction: column; }
+.form-item.nome { grid-column: span 6; }
+.form-item.telefone { grid-column: span 6; }
+.form-item.endereco { grid-column: span 5; }
+.form-item.numero { grid-column: span 2; }
+.form-item.cidade { grid-column: span 5; }
+.form-item.problema { grid-column: span 12; }
+
+.form-button {
+    background-color: var(--verde-turquesa);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 300px;
+    margin: 30px auto 0 auto;
+    display: block;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.form-button:hover { background-color: #2ea991; }
+
+/* ========================= FOOTER ========================= */
+.footer {
+    background-color: var(--azul-petroleo);
+    color: var(--branco-esverdeado);
+    padding: 40px 20px 20px;
+    font-family: 'Myriad', sans-serif;
+    font-size: 1rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-branding { flex: 1 1 200px; }
+.footer-logo {
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.footer-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+.footer-sections {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    flex-wrap: wrap;
+    flex: 2 1 200px;
+    justify-content: flex-end;
+}
+
+.footer-links,
+.footer-contact {
+    min-width: 150px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 12px;
+    color: var(--verde-turquesa);
+    font-weight: bold;
+    font-size: 1.05rem;
+}
+
+.footer-links a {
+    display: block;
+    color: var(--branco-esverdeado);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:not(:last-child),
+.footer-contact p:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+.footer-links a:hover { color: var(--verde-turquesa); }
+.footer-contact p { font-size: 0.95rem; }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.85rem;
+    color: var(--cinza-frio);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+/* ========================= MENU DESKTOP ========================= */
+.desktop-menu {
+    display: none;
+    gap: 30px;
+}
+
+.desktop-menu a {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: var(--azul-petroleo);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.desktop-menu a:hover { color: var(--verde-turquesa); }
+
+@media (min-width: 769px) {
+    .desktop-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-btn,
+    .dropdown-menu {
+        display: none !important;
+    }
+}
+
+/* ========================= RESPONSIVO - FORMULÁRIO ========================= */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-item.nome,
+    .form-item.telefone,
+    .form-item.endereco,
+    .form-item.numero,
+    .form-item.cidade,
+    .form-item.problema {
+        grid-column: span 1;
+    }
+}
+
+/* ========================= RESPONSIVO - FOOTER ========================= */
+@media (max-width: 768px) {
+    .footer {
+        padding: 25px 15px 10px;
+        font-size: 1rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-logo {
+        width: 150px;
+        height: 60px;
+        margin-bottom: 8px;
+    }
+
+    .footer-description {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 15px;
+        max-width: 300px;
+    }
+
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-links,
+    .footer-contact {
+        text-align: center;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+    }
+
+    .footer-links a,
+    .footer-contact p {
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem;
+        margin-top: 20px;
+        padding-top: 10px;
+    }
+}
+
+/* ========================= RESPONSIVO GERAL ========================= */
+@media (max-width: 600px) {
+    .logo {
+        width: 180px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+
+    .form-wrapper h2 {
+        font-size: 1.1em;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .form-wrapper {
+        padding: 30px 15px;
+    }
+
+    .dropdown-menu nav a {
+        font-size: 1.1em;
+    }
+}

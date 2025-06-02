@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+/* ========== FONTES BALTO ========== */
+/* Balto - 100 Thin */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Thin_Italic.otf') format('opentype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+/* Balto - 300 Light */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Light_Italic.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Balto - 400 Book (Regular) */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Book.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Book_Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Balto - 500 Medium */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Medium_Italic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Balto - 700 Bold */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Bold_Italic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Balto - 900 Black */
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Balto';
+    src: url('../fonts/Balto/fonnts.com-Balto_Black_Italic.otf') format('opentype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ========== FONTES MYRIAD ========== */
+
+@font-face {
+    font-family: 'Myriad';
+    src: url('../fonts/MyriadFontFamily/6851.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad';
+    src: url('../fonts/MyriadFontFamily/6847.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Myriad';
+    src: url('../fonts/MyriadFontFamily/6852.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Myriad';
+    src: url('../fonts/MyriadFontFamily/6853.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== VARIÁVEIS GLOBAIS ========== */
+:root {
+    --verde-turquesa: #37bba3;
+    --azul-petroleo: #224957;
+    --branco-esverdeado: #f6f9f8;
+    --cinza-frio: #adb5b9;
+}
+
+/* ========== ESTILOS GLOBAIS ========== */
+body {
+    font-family: 'Myriad', sans-serif;
+    background-color: var(--branco-esverdeado);
+    color: var(--azul-petroleo);
+    line-height: 1.6;
+    font-size: 1.6em;
+}
+
+a {
+    color: var(--verde-turquesa);
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--verde-turquesa);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #2ea991;
+}
