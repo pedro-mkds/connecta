@@ -1,6 +1,7 @@
 function verificarSenha() {
     const senha = document.getElementById('senha').value;
 
+    console.log("Tentando validar senha:", senha);
     fetch('https://connecta-back.onrender.com/validar_senha', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -9,6 +10,7 @@ function verificarSenha() {
 
         .then(res => res.json())
         .then(data => {
+            console.log("Resposta da API:", data);
             if (data.acesso) {
                 document.getElementById('painel').style.display = 'block';
             } else {
