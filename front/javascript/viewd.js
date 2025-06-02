@@ -1,26 +1,26 @@
 function verificarSenha() {
     const senha = document.getElementById('senha').value;
+    console.log("Enviando senha:", senha);  // ← teste
 
-    console.log("Tentando validar senha:", senha);
     fetch('https://connecta-back.onrender.com/validar_senha', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ senha })
     })
-
-        .then(res => res.json())
-        .then(data => {
-            console.log("Resposta da API:", data);
-            if (data.acesso) {
-                document.getElementById('painel').style.display = 'block';
-            } else {
-                alert('Senha incorreta');
-            }
-        })
-        .catch(() => {
-            alert('Erro ao validar senha');
-        });
+    .then(res => res.json())
+    .then(data => {
+        console.log("Resposta da API:", data);  // ← teste
+        if (data.acesso) {
+            document.getElementById('painel').style.display = 'block';
+        } else {
+            alert('Senha incorreta');
+        }
+    })
+    .catch(() => {
+        alert('Erro ao validar senha');
+    });
 }
+
 
 function exportar() {
     fetch('https://connecta-back.onrender.com/exportar')
